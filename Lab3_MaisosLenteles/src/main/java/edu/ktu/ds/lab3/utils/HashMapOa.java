@@ -19,7 +19,8 @@ public class HashMapOa<K, V> implements EvaluableMap<K, V> {
 
         LINEAR,
         QUADRATIC,
-        DOUBLE_HASHING
+        DOUBLE_HASHING,
+        DINGUS
     }
 
     public static final int DEFAULT_INITIAL_CAPACITY = 8;
@@ -224,8 +225,9 @@ public class HashMapOa<K, V> implements EvaluableMap<K, V> {
                 return (index + (i + 1) * (i + 1)) % table.length;
             case DOUBLE_HASHING:
                 return (index + i * (7 - Math.abs(key.hashCode()) % 7)) % table.length;
+            default:
+                throw new IllegalArgumentException("oaType is unknown");
         }
-        return index;
     }
 
     /**

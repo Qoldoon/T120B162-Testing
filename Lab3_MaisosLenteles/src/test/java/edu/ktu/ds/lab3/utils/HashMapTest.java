@@ -11,6 +11,8 @@ public class HashMapTest extends TestCase {
         Assert.assertTrue(map.isEmpty());
         map.put(1,3);
         Assert.assertFalse(map.isEmpty());
+        map.remove(1);
+        Assert.assertTrue(map.isEmpty());
     }
 
     public void testSize() {

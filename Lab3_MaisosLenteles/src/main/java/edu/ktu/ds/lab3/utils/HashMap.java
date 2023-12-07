@@ -249,9 +249,6 @@ public class HashMap<K, V> implements EvaluableMap<K, V> {
      * @return
      */
     private Node<K, V> getInChain(K key, Node<K, V> node) {
-        if (key == null) {
-            throw new IllegalArgumentException("Key is null in getInChain(K key, Node node)");
-        }
         int chainSize = 0;
         for (Node<K, V> n = node; n != null; n = n.next) {
             chainSize++;
@@ -363,9 +360,6 @@ public class HashMap<K, V> implements EvaluableMap<K, V> {
         protected V value;
         // Rodyklė į sekantį grandinėlės mazgą
         protected Node<K, V> next;
-
-        protected Node() {
-        }
 
         protected Node(K key, V value, Node<K, V> next) {
             this.key = key;

@@ -13,7 +13,6 @@ public class ManualTest {
         Locale.setDefault(Locale.US); // suvienodiname skaičių formatus
         executeTest();
     }
-
     public static void executeTest() {
         Car car1 = new Car("Renault", "Laguna", 1997, 50000, 1700);
         Car car2 = new Car("Renault", "Megane", 2001, 20000, 3500);
